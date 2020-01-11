@@ -1,0 +1,1 @@
+g++ mgmres.cpp -c && g++ main.cpp -c && g++ -o program mgmres.o main.o && ./program
