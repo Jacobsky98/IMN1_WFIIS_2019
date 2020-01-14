@@ -122,39 +122,38 @@ void zapisMap()
 {
   FILE* mapa_vx[5];
   FILE* mapa_vy[5];
-  int ilosc_map = 1;
   if(D <= 0.05)
   {
     mapa_vx[0] = fopen("wyniki/mapa_vx1_0.0.txt", "w");
-    // mapa_vx[1] = fopen("wyniki/mapa_vx2_0.0.txt", "w");
-    // mapa_vx[2] = fopen("wyniki/mapa_vx3_0.0.txt", "w");
-    // mapa_vx[3] = fopen("wyniki/mapa_vx4_0.0.txt", "w");
-    // mapa_vx[4] = fopen("wyniki/mapa_vx5_0.0.txt", "w");
+    mapa_vx[1] = fopen("wyniki/mapa_vx2_0.0.txt", "w");
+    mapa_vx[2] = fopen("wyniki/mapa_vx3_0.0.txt", "w");
+    mapa_vx[3] = fopen("wyniki/mapa_vx4_0.0.txt", "w");
+    mapa_vx[4] = fopen("wyniki/mapa_vx5_0.0.txt", "w");
     mapa_vy[0] = fopen("wyniki/mapa_vy1_0.0.txt", "w");
-    // mapa_vy[1] = fopen("wyniki/mapa_vy2_0.0.txt", "w");
-    // mapa_vy[2] = fopen("wyniki/mapa_vy3_0.0.txt", "w");
-    // mapa_vy[3] = fopen("wyniki/mapa_vy4_0.0.txt", "w");
-    // mapa_vy[4] = fopen("wyniki/mapa_vy5_0.0.txt", "w");
+    mapa_vy[1] = fopen("wyniki/mapa_vy2_0.0.txt", "w");
+    mapa_vy[2] = fopen("wyniki/mapa_vy3_0.0.txt", "w");
+    mapa_vy[3] = fopen("wyniki/mapa_vy4_0.0.txt", "w");
+    mapa_vy[4] = fopen("wyniki/mapa_vy5_0.0.txt", "w");
   }
   else
   {
     mapa_vx[0] = fopen("wyniki/mapa_vx1_0.1.txt", "w");
-    // mapa_vx[1] = fopen("wyniki/mapa_vx2_0.1.txt", "w");
-    // mapa_vx[2] = fopen("wyniki/mapa_vx3_0.1.txt", "w");
-    // mapa_vx[3] = fopen("wyniki/mapa_vx4_0.1.txt", "w");
-    // mapa_vx[4] = fopen("wyniki/mapa_vx5_0.1.txt", "w");
+    mapa_vx[1] = fopen("wyniki/mapa_vx2_0.1.txt", "w");
+    mapa_vx[2] = fopen("wyniki/mapa_vx3_0.1.txt", "w");
+    mapa_vx[3] = fopen("wyniki/mapa_vx4_0.1.txt", "w");
+    mapa_vx[4] = fopen("wyniki/mapa_vx5_0.1.txt", "w");
     mapa_vy[0] = fopen("wyniki/mapa_vy1_0.1.txt", "w");
-    // mapa_vy[1] = fopen("wyniki/mapa_vy2_0.1.txt", "w");
-    // mapa_vy[2] = fopen("wyniki/mapa_vy3_0.1.txt", "w");
-    // mapa_vy[3] = fopen("wyniki/mapa_vy4_0.1.txt", "w");
-    // mapa_vy[4] = fopen("wyniki/mapa_vy5_0.1.txt", "w");
+    mapa_vy[1] = fopen("wyniki/mapa_vy2_0.1.txt", "w");
+    mapa_vy[2] = fopen("wyniki/mapa_vy3_0.1.txt", "w");
+    mapa_vy[3] = fopen("wyniki/mapa_vy4_0.1.txt", "w");
+    mapa_vy[4] = fopen("wyniki/mapa_vy5_0.1.txt", "w");
   }
 
   for(int i = 0; i <= nx; i++)
     {
         for(int j = 0; j <= ny; j++)
         {
-          for(int k = 1; k <= ilosc_map; k++)
+          for(int k = 1; k <= 1; k++)
           {
             fprintf(mapa_vx[k-1], "%.2f %.2f %.3f\n", x[i], y[j], vx[i][j]);
             fprintf(mapa_vy[k-1], "%.2f %.2f %.3f\n", x[i], y[j], vy[i][j]);
@@ -166,13 +165,12 @@ void zapisMap()
         fprintf(mapa_vy[0], "\n");
   }
 
-  for(int i = 0; i < ilosc_map; i++)
+  for(int i = 0; i < 5; i++)
   {
     fclose(mapa_vx[i]);
     fclose(mapa_vy[i]);
   }
 }
-
 void algorytmAdwekcjiDyfuzji()
 {
   FILE* calka;
